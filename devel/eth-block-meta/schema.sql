@@ -5,7 +5,12 @@ create table block_meta
     number      integer,
     hash        text,
     parent_hash text,
-    timestamp   text
+    uncle_hash  text,
+    receipt_root text,
+    gas_limit text,
+    gas_used text,
+    timestamp   text,
+    size        int
 );
 
 create table cursors
@@ -14,4 +19,13 @@ create table cursors
     cursor     text,
     block_num  bigint,
     block_id   text
+);
+
+create table transactions
+(
+    id         text not null constraint transactions_pk primary key,
+    status     text,
+    gas_used  bigint,
+    gas_limit   text,
+    hash       text
 );
