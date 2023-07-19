@@ -753,9 +753,19 @@ dependencies = [
 
 [[package]]
 name = "substreams-database-change"
-version = "1.0.0"
+version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bcade6ad8e99eaee1c73ddf2a85c278a931333d33d71d52504e5ab45cc242f4c"
+checksum = "0a3407c2a9c2064ef1e026b5162846249580ad353a3baa5cef288748f8401550"
+dependencies = [
+ "prost",
+ "prost-types",
+ "substreams",
+]
+
+[[package]]
+name = "substreams-entity-change"
+version = "1.3.0"
+source = "git+https://github.com/streamingfast/substreams-entity-change/?branch=develop#1c257157eadfd4d31256b10f0050f52f2602763c"
 dependencies = [
  "base64",
  "prost",
@@ -841,11 +851,15 @@ name = "substreams-postgresql-sink-tutorial"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "base64",
  "chrono",
+ "hex",
+ "log",
  "prost",
  "prost-types",
  "substreams",
  "substreams-database-change",
+ "substreams-entity-change",
  "substreams-ethereum",
 ]
 
